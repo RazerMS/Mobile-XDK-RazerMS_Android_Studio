@@ -74,7 +74,7 @@ public final class MOLPay {
         }
 
         /**
-         * @param value A value not less than '1.00'
+         * @param amount A value not less than '1.00'
          * @return
          */
         public MandatoryFieldBuilder withAmount(String amount) {
@@ -273,7 +273,7 @@ public final class MOLPay {
          * Use this to customize the UI theme for the payment info screen,
          * the original XDK custom.css file is provided at Example project source for reference and implementation.
          *
-         * @param value e.g. "file:///android_asset/custom.css"
+         * @param customCssUrl e.g. "file:///android_asset/custom.css"
          * @return
          */
         public OptionalFieldBuilder withCustomCssUrl(String customCssUrl) {
@@ -315,7 +315,7 @@ public final class MOLPay {
          * Restricts to only allowed predefined payment Channels.
          * This overrides {@link #withMultiChannel()} to only show restricted Channels.
          *
-         * @param value e.g. {"credit", "credit3", "GPayPal", "alipay"}
+         * @param allowedChannels e.g. {"credit", "credit3", "GPayPal", "alipay"}
          * @return
          * @see OptionalFieldBuilder#withMultiChannel()
          */
