@@ -11,11 +11,13 @@ This is the complete and functional MOLPay Android payment module that is ready 
 
 ## Recommended configurations
 
-    - Minimum Android SDK Version: 25 ++
+    - Minimum Android SDK Version: 27 ++
     
     - Minimum Android API level: 19 ++
     
     - Minimum Android target version: Android 4.4
+    
+    - Minimum Android Studio Gradle: 3.1.2
 
 ## Installation
 
@@ -67,91 +69,101 @@ This is the complete and functional MOLPay Android payment module that is ready 
 ## Prepare the Payment detail object
 
     HashMap<String, Object> paymentDetails = new HashMap<>();
-        
-        // Mandatory String. A value not less than '1.00'
-        paymentDetails.put(MOLPayActivity.mp_amount, "1.10"); 
-        
-        // Mandatory String. Values obtained from MOLPay
+    
+        // Optional, REQUIRED when use online Sandbox environment and account credentials.
+        paymentDetails.put(MOLPayActivity.mp_dev_mode, false);
+    
+        // Mandatory String. Values obtained from MOLPay.
         paymentDetails.put(MOLPayActivity.mp_username, "username");
         paymentDetails.put(MOLPayActivity.mp_password, "password");
         paymentDetails.put(MOLPayActivity.mp_merchant_ID, "merchantid");
         paymentDetails.put(MOLPayActivity.mp_app_name, "appname");
         paymentDetails.put(MOLPayActivity.mp_verification_key, "vkey123");
     
-        // Mandatory String. Payment values
+        // Mandatory String. Payment values.
+        paymentDetails.put(MOLPayActivity.mp_amount, "1.10"); // Minimum 1.01
         paymentDetails.put(MOLPayActivity.mp_order_ID, "orderid123");
         paymentDetails.put(MOLPayActivity.mp_currency, "MYR");
         paymentDetails.put(MOLPayActivity.mp_country, "MY");
         
-        // Optional String.
-        paymentDetails.put(MOLPayActivity.mp_channel, "multi"); // Use 'multi' for all available channels option. For individual channel seletion, please refer to https://github.com/MOLPay/molpay-mobile-xdk-examples/blob/master/channel_list.tsv. 
+        // Optional, but required payment values. User input will be required when values not passed.
+        paymentDetails.put(MOLPayActivity.mp_channel, "multi"); // Use 'multi' for all available channels option. For individual channel seletion, please refer to https://github.com/MOLPay/molpay-mobile-xdk-examples/blob/master/channel_list.tsv.
         paymentDetails.put(MOLPayActivity.mp_bill_description, "billdesc");
         paymentDetails.put(MOLPayActivity.mp_bill_name, "billname");
         paymentDetails.put(MOLPayActivity.mp_bill_email, "email@domain.com");
         paymentDetails.put(MOLPayActivity.mp_bill_mobile, "+1234567");
-        paymentDetails.put(MOLPayActivity.mp_channel_editing, false); // Option to allow channel selection.
-        paymentDetails.put(MOLPayActivity.mp_editing_enabled, false); // Option to allow billing information editing.
     
-        // Optional for Escrow
+        // Optional, allow channel selection. 
+        paymentDetails.put(MOLPayActivity.mp_channel_editing, false);
+    
+        // Optional, allow billing information editing.
+        paymentDetails.put(MOLPayActivity.mp_editing_enabled, false);
+    
+        // Optional, for Escrow.
         paymentDetails.put(MOLPayActivity.mp_is_escrow, ""); // Put "1" to enable escrow
-        
-        // Optional for credit card BIN restrictions
+    
+        // Optional, for credit card BIN restrictions and campaigns.
         String binlock[] = {"414170","414171"};
         paymentDetails.put(MOLPayActivity.mp_bin_lock, binlock);
+    
+        // Optional, for mp_bin_lock alert error.
         paymentDetails.put(MOLPayActivity.mp_bin_lock_err_msg, "Only UOB allowed");
-    
-        // For transaction request use only, do not use this on payment process
-        paymentDetails.put(MOLPayActivity.mp_transaction_id, ""); 
-    
-        // Optional, provide a valid cash channel transaction id here will display a payment instruction screen.
+        
+        // WARNING! FOR TRANSACTION QUERY USE ONLY, DO NOT USE THIS ON PAYMENT PROCESS.
+        // Optional, provide a valid cash channel transaction id here will display a payment instruction screen. Required if mp_request_type is 'Receipt'.
+        paymentDetails.put(MOLPayActivity.mp_transaction_id, "");
+        // Optional, use 'Receipt' for Cash channels, and 'Status' for transaction status query.
         paymentDetails.put(MOLPayActivity.mp_request_type, "");
     
-        // Optional, use this to customize the UI theme for the payment info screen, the original XDK custom.css file is provided at Example project source for reference and implementation.
+        // Optional, use this to customize the UI theme for the payment info screen, the original XDK custom.css file can be obtained at https://github.com/MOLPay/molpay-mobile-xdk-examples/blob/master/custom.css.
         paymentDetails.put(MOLPayActivity.mp_custom_css_url, "file:///android_asset/custom.css");
     
-        // Optional, set the token id to nominate a preferred token as the default selection, set "new" to allow new card only
+        // Optional, set the token id to nominate a preferred token as the default selection, set "new" to allow new card only.
         paymentDetails.put(MOLPayActivity.mp_preferred_token, "");
     
-        // Optional, credit card transaction type, set "AUTH" to authorize the transaction
+        // Optional, credit card transaction type, set "AUTH" to authorize the transaction.
         paymentDetails.put(MOLPayActivity.mp_tcctype, "");
     
-        // Optional, set true to process this transaction through the recurring api, please refer the MOLPay Recurring API pdf 
+        // Optional, required valid credit card channel, set true to process this transaction through the recurring api, please refer the MOLPay Recurring API pdf. 
         paymentDetails.put(MOLPayActivity.mp_is_recurring, false);
     
-        // Optional for channels restriction
+        // Optional, show nominated channels.
         String allowedchannels[] = {"credit","credit3"};
         paymentDetails.put(MOLPayActivity.mp_allowed_channels, allowedchannels);
     
-        // Optional for sandboxed development environment, set boolean value to enable.
+        // Optional, simulate offline payment, set boolean value to enable. 
         paymentDetails.put(MOLPayActivity.mp_sandbox_mode, true);
     
         // Optional, required a valid mp_channel value, this will skip the payment info page and go direct to the payment screen.
         paymentDetails.put(MOLPayActivity.mp_express_mode, true);
     
-        // Optional, enable this for extended email format validation based on W3C standards.
+        // Optional, extended email format validation based on W3C standards.
         paymentDetails.put(MOLPayActivity.mp_advanced_email_validation_enabled, true);
     
-        // Optional, enable this for extended phone format validation based on Google i18n standards.
+        // Optional, extended phone format validation based on Google i18n standards.
         paymentDetails.put(MOLPayActivity.mp_advanced_phone_validation_enabled, true);
-        
-        // Optional, explicitly force disable billing name edit.
+    
+        // Optional, explicitly force disable user input.
         paymentDetails.put(MOLPayActivity.mp_bill_name_edit_disabled, true);
-    
-        // Optional, explicitly force disable billing email edit.
         paymentDetails.put(MOLPayActivity.mp_bill_email_edit_disabled, true);
-    
-        // Optional, explicitly force disable billing mobile edit.
         paymentDetails.put(MOLPayActivity.mp_bill_mobile_edit_disabled, true);
-    
-        // Optional, explicitly force disable billing description edit.
         paymentDetails.put(MOLPayActivity.mp_bill_description_edit_disabled, true);
     
         // Optional, EN, MS, VI, TH, FIL, MY, KM, ID, ZH.
         paymentDetails.put(MOLPayActivity.mp_language, "EN");
     
-        // Optional, enable for online sandbox testing.
-        paymentDetails.put(MOLPayActivity.mp_dev_mode, false);
-
+        // Optional, Cash channel payment request expiration duration in hour.
+        paymentDetails.put(MOLPayActivity.mp_cash_waittime, 48);
+        
+        // Optional, allow bypass of 3DS on some credit card channels.
+        paymentDetails.put(MOLPayActivity.mp_non_3DS, true);
+    
+        // Optional, disable card list option.
+        paymentDetails.put(MOLPayActivity.mp_card_list_disabled, true);
+    
+        // Optional for channels restriction, this option has less priority than mp_allowed_channels.
+        String disabledChannels[] = {"credit"};
+        paymentDetails.put(MOLPayActivity.mp_disabled_channels, disabledChannels);
 
 
 ## Start the payment module

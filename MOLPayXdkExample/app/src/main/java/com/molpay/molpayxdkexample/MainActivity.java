@@ -54,9 +54,11 @@ public class MainActivity extends AppCompatActivity {
         //paymentDetails.put(MOLPayActivity.mp_editing_enabled, false);
         //paymentDetails.put(MOLPayActivity.mp_transaction_id, "");
         //paymentDetails.put(MOLPayActivity.mp_request_type, "");
+
         //String binlock[] = {"123456","234567"};
         //paymentDetails.put(MOLPayActivity.mp_bin_lock, binlock);
         //paymentDetails.put(MOLPayActivity.mp_bin_lock_err_msg, "Wrong BIN format");
+
         //paymentDetails.put(MOLPayActivity.mp_is_escrow, "");
         //paymentDetails.put(MOLPayActivity.mp_filter, "1");
         //paymentDetails.put(MOLPayActivity.mp_custom_css_url, "file:///android_asset/custom.css");
@@ -75,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
         //paymentDetails.put(MOLPayActivity.mp_bill_description_edit_disabled, true);
         //paymentDetails.put(MOLPayActivity.mp_language, "EN");
         //paymentDetails.put(MOLPayActivity.mp_dev_mode, false);
+        //paymentDetails.put(MOLPayActivity.mp_cash_waittime, 24);
+        //paymentDetails.put(MOLPayActivity.mp_non_3DS, true);
+        //paymentDetails.put(MOLPayActivity.mp_card_list_disabled, true);
+
+        //String disabledChannels[] = {"credit"};
+        //paymentDetails.put(MOLPayActivity.mp_disabled_channels, disabledChannels);
 
         Intent intent = new Intent(MainActivity.this, MOLPayActivity.class);
         intent.putExtra(MOLPayActivity.MOLPayPaymentDetails, paymentDetails);
