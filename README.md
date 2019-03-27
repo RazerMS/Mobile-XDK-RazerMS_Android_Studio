@@ -1,15 +1,15 @@
 <!--
-# license: Copyright © 2011-2016 MOLPay Sdn Bhd. All Rights Reserved. 
+# license: Copyright © 2011-2019 MOLPay Sdn Bhd. All Rights Reserved. 
 -->
 
 <img src="https://user-images.githubusercontent.com/38641542/39353138-654385dc-4a39-11e8-9710-19e5f03ec62e.jpg">
 
-# molpay-mobile-xdk-android
+# rms-mobile-xdk-android
 
-This is the complete and functional MOLPay Android payment module that is ready to be implemented into Android Studio through gradle from JCenter/Maven repository as a MOLPayXDK module. An example application project 
+This is the complete and functional Razer Merchant Services Android payment module that is ready to be implemented into Android Studio through gradle from JCenter/Maven repository as a MOLPayXDK module. An example application project 
 (MOLPayXdkExample) is provided for MOLPayXDK framework integration reference.
 
-这是一个完整和实用的MOLPay安卓支付模块，可以通过JCenter/Maven存储库中的gradle实现到Android Studio以作为一个MOLPayXDK框架。在此提供了一个示例应用程序项目（MOLPayXdkExample）以作为MOLPayXDK框架整合的参考。
+这是一个完整和实用的 Razer Merchant Services 安卓支付模块，可以通过 JCenter/Maven 存储库中的 gradle 实现到 Android Studio 以作为一个 MOLPayXDK 框架。在此提供了一个示例应用程序项目（MOLPayXdkExample）以作为 MOLPayXDK 框架整合的参考。
 
 ## Recommended configurations
 
