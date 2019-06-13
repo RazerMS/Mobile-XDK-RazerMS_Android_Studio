@@ -25,5 +25,5 @@ dependencies {
     implementation 'com.android.support:support-v4:27.0.1'
     implementation 'com.android.support:appcompat-v7:27.0.1'
     implementation 'com.android.support:design:27.0.1'
-    implementation 'com.molpay:molpay-mobile-xdk-android:3.24.0'
+    implementation 'com.molpay:molpay-mobile-xdk-android:3.25.0'
 }
