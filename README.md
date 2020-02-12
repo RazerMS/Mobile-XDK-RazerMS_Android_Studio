@@ -2,7 +2,7 @@
 # license: Copyright © 2011-2019 MOLPay Sdn Bhd. All Rights Reserved. 
 -->
 
-<img src="https://user-images.githubusercontent.com/38641542/39353138-654385dc-4a39-11e8-9710-19e5f03ec62e.jpg">
+<img src="https://user-images.githubusercontent.com/38641542/74150364-ba947500-4c44-11ea-8d79-ae8cd4352816.jpg">
 
 # rms-mobile-xdk-android
 
@@ -194,12 +194,12 @@ This is the complete and functional Razer Merchant Services Android payment modu
 
 ## Support
 
-Submit issue to this repository or email to our support@molpay.com
+Submit issue to this repository or email to our support-sa@razer.com
 
-Merchant Technical Support / Customer Care : support@molpay.com<br>
-Sales/Reseller Enquiry : sales@molpay.com<br>
-Marketing Campaign : marketing@molpay.com<br>
-Channel/Partner Enquiry : channel@molpay.com<br>
-Media Contact : media@molpay.com<br>
-R&D and Tech-related Suggestion : technical@molpay.com<br>
-Abuse Reporting : abuse@molpay.com
+Merchant Technical Support / Customer Care : support-sa@razer.com<br>
+Sales/Reseller Enquiry : sales-sa@razer.com<br>
+Marketing Campaign : marketing-sa@razer.com<br>
+Channel/Partner Enquiry : channel-sa@razer.com<br>
+Media Contact : media-sa@razer.com<br>
+R&D and Tech-related Suggestion : technical-sa@razer.com<br>
+Abuse Reporting : abuse-sa@razer.com
