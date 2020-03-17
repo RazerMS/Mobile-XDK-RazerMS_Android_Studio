@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MOLPayXdkExample.iml" filepath="$PROJECT_DIR$/MOLPayXdkExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/MOLPayXdkExample-app.iml" filepath="$PROJECT_DIR$/app/MOLPayXdkExample-app.iml" group="MOLPayXdkExample/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rms-mobile-xdk-android-MOLPayXdkExample.iml" filepath="$PROJECT_DIR$/rms-mobile-xdk-android-MOLPayXdkExample.iml" group="MOLPayXdkExample" />
     </modules>
   </component>
 </project>
