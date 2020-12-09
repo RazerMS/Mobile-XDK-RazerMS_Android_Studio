@@ -35,12 +35,12 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         HashMap<String, Object> paymentDetails = new HashMap<>();
-        paymentDetails.put(MOLPayActivity.mp_amount, "");
+        paymentDetails.put(MOLPayActivity.mp_amount, "1.10");
         paymentDetails.put(MOLPayActivity.mp_username, "");
         paymentDetails.put(MOLPayActivity.mp_password, "");
         paymentDetails.put(MOLPayActivity.mp_merchant_ID, "");
         paymentDetails.put(MOLPayActivity.mp_app_name, "");
-        paymentDetails.put(MOLPayActivity.mp_order_ID, "");
+        paymentDetails.put(MOLPayActivity.mp_order_ID, "2781123");
         paymentDetails.put(MOLPayActivity.mp_currency, "MYR");
         paymentDetails.put(MOLPayActivity.mp_country, "MY");
         paymentDetails.put(MOLPayActivity.mp_verification_key, "");
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         paymentDetails.put(MOLPayActivity.mp_bill_mobile, "+601234567789");
         
         //paymentDetails.put(MOLPayActivity.mp_channel_editing, false);
-        //paymentDetails.put(MOLPayActivity.mp_editing_enabled, false);
+        //paymentDetails.put(MOLPayActivity.mp_editing_enabled, true);
         //paymentDetails.put(MOLPayActivity.mp_transaction_id, "");
         //paymentDetails.put(MOLPayActivity.mp_request_type, "");
 
@@ -71,10 +71,10 @@ public class MainActivity extends AppCompatActivity {
         //paymentDetails.put(MOLPayActivity.mp_express_mode, true);
         //paymentDetails.put(MOLPayActivity.mp_advanced_email_validation_enabled, true);
         //paymentDetails.put(MOLPayActivity.mp_advanced_phone_validation_enabled, true);
-        //paymentDetails.put(MOLPayActivity.mp_bill_name_edit_disabled, true);
-        //paymentDetails.put(MOLPayActivity.mp_bill_email_edit_disabled, true);
-        //paymentDetails.put(MOLPayActivity.mp_bill_mobile_edit_disabled, true);
-        //paymentDetails.put(MOLPayActivity.mp_bill_description_edit_disabled, true);
+        //paymentDetails.put(MOLPayActivity.mp_bill_name_edit_disabled, false);
+        //paymentDetails.put(MOLPayActivity.mp_bill_email_edit_disabled, false);
+        //paymentDetails.put(MOLPayActivity.mp_bill_mobile_edit_disabled, false);
+        //paymentDetails.put(MOLPayActivity.mp_bill_description_edit_disabled, false);
         //paymentDetails.put(MOLPayActivity.mp_language, "EN");
         //paymentDetails.put(MOLPayActivity.mp_dev_mode, true);
         //paymentDetails.put(MOLPayActivity.mp_cash_waittime, 24);
