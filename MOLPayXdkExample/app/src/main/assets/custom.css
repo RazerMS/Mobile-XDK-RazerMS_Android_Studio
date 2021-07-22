@@ -375,3 +375,10 @@ button[disabled], html input[disabled] {
 .list-group-item.mp_channel {
     display: none;
 }
+.barcode-container {
+    width: 100%;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}

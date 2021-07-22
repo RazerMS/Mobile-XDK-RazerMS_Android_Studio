@@ -22,11 +22,24 @@ This is the complete and functional Razer Merchant Services Android payment modu
 
 ## Installation
 
-    Step 1 - Add compile 'com.molpay:molpay-mobile-xdk-android:<put latest release version here>' to dependencies in application build.gradle
+    Step 1 - Add it in your root build.gradle at the end of repositories:
+
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
     
-    Step 2 - Add import com.molpay.molpayxdk.MOLPayActivity;
+    Step 2 -  Add the dependency
+
+    dependencies {
+	        implementation 'com.github.RazerMS:rms-mobile-xdk-android-library:3.31.0'
+	}
+
+    Step 3 - Add import com.molpay.molpayxdk.MOLPayActivity;
     
-    Step 3 - Add the result callback function to get return results when the payment activity ended,
+    Step 4 - Add the result callback function to get return results when the payment activity ended,
     
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
