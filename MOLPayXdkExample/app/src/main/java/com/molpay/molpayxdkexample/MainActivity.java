@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
         paymentDetails.put(MOLPayActivity.mp_verification_key, "");
         paymentDetails.put(MOLPayActivity.mp_channel, "multi");
         paymentDetails.put(MOLPayActivity.mp_bill_description, "description");
-        paymentDetails.put(MOLPayActivity.mp_bill_name, "name");
-        paymentDetails.put(MOLPayActivity.mp_bill_email, "example@email.com");
-        paymentDetails.put(MOLPayActivity.mp_bill_mobile, "+601234567789");
+        paymentDetails.put(MOLPayActivity.mp_bill_name, "example");
+        paymentDetails.put(MOLPayActivity.mp_bill_email, "example@mail.com");
+        paymentDetails.put(MOLPayActivity.mp_bill_mobile, "+60123456789");
         
         //paymentDetails.put(MOLPayActivity.mp_channel_editing, false);
         //paymentDetails.put(MOLPayActivity.mp_editing_enabled, true);
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         //paymentDetails.put(MOLPayActivity.mp_bill_mobile_edit_disabled, false);
         //paymentDetails.put(MOLPayActivity.mp_bill_description_edit_disabled, false);
         //paymentDetails.put(MOLPayActivity.mp_language, "EN");
-        //paymentDetails.put(MOLPayActivity.mp_dev_mode, true);
+//        paymentDetails.put(MOLPayActivity.mp_dev_mode, true);
         //paymentDetails.put(MOLPayActivity.mp_cash_waittime, 24);
         //paymentDetails.put(MOLPayActivity.mp_non_3DS, true);
         //paymentDetails.put(MOLPayActivity.mp_card_list_disabled, true);
