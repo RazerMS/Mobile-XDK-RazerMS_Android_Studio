@@ -91,6 +91,26 @@ public class MainActivity extends AppCompatActivity {
         
     }
 
+    private void sampleMOLPayIntentBuilder() {
+        Intent intent = MOLPay.IntentBuilder.from(this)
+                // fill up mandatory fields
+                .withMandatoryFields()
+                .withAppUserName("").withAppPassword("").withAppName("")
+                .withMerchantID("").withVerificationKey("")
+                .withAmount("1.01").withCurrency("MYR").withCountry("MY")
+                .build()
+
+                // fill up optional fields, more methods not shown
+                .withOptionalFields()
+                .withBillName("").withBillDescription("").withBillEmail("").withBillMobile("")
+                .withEditingEnabled().withBillDescriptionEditDisabled().build()
+                .withAllowedChannels(new String[]{"credit", "credit3", "GPayPal", "alipay"})
+                .withSandboxMode().build()
+                .build();
+
+        startActivityForResult(intent, MOLPayActivity.MOLPayXDK);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

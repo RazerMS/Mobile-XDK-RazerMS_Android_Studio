@@ -184,6 +184,28 @@ This is the complete and functional Razer Merchant Services Android payment modu
 
     startActivityForResult(intent, MOLPayActivity.MOLPayXDK);
 
+## Simple payment request builder
+
+    Copy the MOLPay.java in the example and drop into your project to easily build a payment request.
+
+    Intent intent = MOLPay.IntentBuilder.from(this)
+        // fill up mandatory fields
+        .withMandatoryFields()
+        .withAppUserName("").withAppPassword("").withAppName("")
+        .withMerchantID("").withVerificationKey("")
+        .withAmount("1.01").withCurrency("MYR").withCountry("MY")
+        .build()
+
+        // fill up optional fields, more methods not shown
+        .withOptionalFields()
+        .withBillName("").withBillDescription("").withBillEmail("").withBillMobile("")
+        .withEditingEnabled().withBillDescriptionEditDisabled().build()
+        .withAllowedChannels(new String[]{"credit", "credit3", "GPayPal", "alipay"})
+        .withSandboxMode().build()
+        .build();
+
+    startActivityForResult(intent, MOLPayActivity.MOLPayXDK);
+
 ## Cash channel payment process (How does it work?)
 
     This is how the cash channels work on XDK:
