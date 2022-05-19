@@ -30,5 +30,5 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
-    implementation 'com.github.RazerMS:rms-mobile-xdk-android-library:3.32.1'
+    implementation 'com.github.RazerMS:Mobile-XDK-RazerMS_Android_Library:3.32.2'
 }
