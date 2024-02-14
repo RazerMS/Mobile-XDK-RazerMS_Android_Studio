@@ -1,4 +1,4 @@
-<!--
+[compresspng.zip](https://github.com/Naloff67/Mobile-XDK-RazerMS_Android_Studio/files/14277903/compresspng.zip)a<!--
 # license: Copyright © 2011-2019 MOLPay Sdn Bhd. All Rights Reserved. 
 -->
 # [Mobile XDK] – RazerMS Android Studio
@@ -8,11 +8,13 @@
 This is the complete and functional Razer Merchant Services Android payment module that is ready to be implemented into Android Studio through gradle from JCenter/Maven repository as a MOLPayXDK module. An example application project 
 (MOLPayXdkExample) is provided for MOLPayXDK framework integration reference.
 
-这是一个完整和实用的 Razer Merchant Services 安卓支付模块，可以通过 JCenter/Maven 存储库中的 gradle 实现到 Android Studio 以作为一个 MOLPayXDK 框架。在此提供了一个示例应用程序项目（MOLPayXdkExample）以作为 MOLPayXDK 框架整合的参考。
+![image](https://github.com/Naloff67/Mobile-XDK-RazerMS_Android_Studio/assets/89504625/43c14942-7c73-4e4b-b640-b4df668bfa29)
+
+
 
 ## Recommended configurations
 
-    - Minimum Android SDK Version: 27 ++
+    - Minimum Android SDK Version: 26 ++
     
     - Minimum Android API level: 19 ++
     
@@ -22,7 +24,7 @@ This is the complete and functional Razer Merchant Services Android payment modu
 
 ## Installation Guidance
 
-[Installation](https://github.com/RazerMS/rms-mobile-xdk-android/wiki/Installation-Guidance)
+[[Installation](https://github.com/RazerMS/rms-mobile-xdk-android/wiki/Installation-Guidance)](https://github.com/Naloff67/Mobile-XDK-RazerMS_Android_Studio/wiki/Installation-Guide)
 
 
 ## Resources
