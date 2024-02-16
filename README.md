@@ -1,6 +1,4 @@
-[compresspng.zip](https://github.com/Naloff67/Mobile-XDK-RazerMS_Android_Studio/files/14277903/compresspng.zip)a<!--
-# license: Copyright © 2011-2019 MOLPay Sdn Bhd. All Rights Reserved. 
--->
+
 # [Mobile XDK] – RazerMS Android Studio
 
 <img src="https://user-images.githubusercontent.com/38641542/74424311-a9d64000-4e8c-11ea-8d80-d811cfe66972.jpg">
