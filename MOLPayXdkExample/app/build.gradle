@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 34
+    //buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.molpay.molpayxdkexample"
         minSdkVersion 16
-        targetSdkVersion 31
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
     }
@@ -22,13 +22,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    namespace 'com.molpay.molpayxdkexample'
 }
 
 dependencies {
     testImplementation 'junit:junit:4.12'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'com.github.RazerMS:Mobile-XDK-RazerMS_Android_Library:3.32.2'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.github.RazerMS:Mobile-XDK-RazerMS_Android_Library:3.33.6'
 }
+
+
+
