@@ -5,9 +5,11 @@
 
 This is the finished and working Razer Merchant Services Android payment module, which can be added to Android Studio as a MOLPayXDK module by using the Gradle integration from the JCenter/Maven repository. For reference purposes, an example application project (MOLPayXdkExample) for the MOLPayXDK framework integration is given.
 
+![Alt Text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExczNmYzllbm1hM2dtc2oweWdtNTluMDZieXgyNHoyNXg5Y3VlY3MzYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/klnKVI4x6CL4vMKcnW/giphy.gif)
+# How does it work ?
+
 ![image](https://github.com/Naloff67/Mobile-XDK-RazerMS_Android_Studio/assets/89504625/43c14942-7c73-4e4b-b640-b4df668bfa29)
 
-# How does it work ?
 
 1. User chooses the Payment option they wish to pay with
 2. Press "Proceed"
