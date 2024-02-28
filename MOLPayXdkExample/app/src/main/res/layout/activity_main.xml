@@ -13,12 +13,18 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
+
+
     </com.google.android.material.appbar.AppBarLayout>
 
+
+
     <include
+
         android:id="@+id/include"
         layout="@layout/content_main"
         />
+
 
     <androidx.appcompat.widget.Toolbar
 
@@ -40,16 +46,8 @@
         app:layout_anchor="@+id/toolbar"
         app:layout_anchorGravity="center" />
 
-    <Button
-        android:id="@+id/xdk_button"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="?attr/colorPrimary"
-        android:text="Start XDK"
-        android:textColor="@android:color/white"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="center" />
+
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

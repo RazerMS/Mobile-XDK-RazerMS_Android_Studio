@@ -17,19 +17,35 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
+    String orderId;
+    String billName;
+    String Country;
+    String Currency;
+    String MobileNum;
+    String TtlAmount;
 
-    private void restartmolpay() {
+
+    public void restartmolpay(HashMap<String, Object> paymentDetails) {
+        Intent intent = new Intent(MainActivity.this, MOLPayActivity.class);
+        intent.putExtra(MOLPayActivity.MOLPayPaymentDetails, paymentDetails);
+        startActivityForResult(intent, MOLPayActivity.MOLPayXDK);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Initialize payment details
         HashMap<String, Object> paymentDetails = new HashMap<>();
         // Optional, REQUIRED when use online Sandbox environment and account credentials.
-        paymentDetails.put(MOLPayActivity.mp_dev_mode, false);
+//        paymentDetails.put(MOLPayActivity.mp_dev_mode, false);
 
         // Mandatory String. Values obtained from MOLPay.
-        // Mandatory String. Values obtained from MOLPay.
-        paymentDetails.put(MOLPayActivity.mp_username, "<username>");
-        paymentDetails.put(MOLPayActivity.mp_password, "<password>");
-        paymentDetails.put(MOLPayActivity.mp_merchant_ID, "<merchantid>");
-        paymentDetails.put(MOLPayActivity.mp_app_name, "<appname>");
-        paymentDetails.put(MOLPayActivity.mp_verification_key, "<vkey123>");
+        paymentDetails.put(MOLPayActivity.mp_username, "RMSxdk_2022");
+        paymentDetails.put(MOLPayActivity.mp_password, "RMSpwd@2022");
+        paymentDetails.put(MOLPayActivity.mp_merchant_ID, "rmsxdk_mobile_Dev");
+        paymentDetails.put(MOLPayActivity.mp_app_name, "mobile");
+        paymentDetails.put(MOLPayActivity.mp_verification_key, "ee738b541eff7b6b495e44771f71c0ec");
 
         // Mandatory String. Payment values.
         paymentDetails.put(MOLPayActivity.mp_amount, "1.10"); // Minimum 1.01
@@ -49,13 +65,13 @@ public class MainActivity extends AppCompatActivity {
         // paymentDetails.put(MOLPayActivity.mp_channel_editing, false);
 
         // Optional, allow billing information editing.
-        paymentDetails.put(MOLPayActivity.mp_editing_enabled, true);
+//        paymentDetails.put(MOLPayActivity.mp_editing_enabled, true);
 
         // Optional, for Escrow.
         // paymentDetails.put(MOLPayActivity.mp_is_escrow, ""); // Put "1" to enable escrow
 
         // Optional, for credit card BIN restrictions and campaigns.
-        String binlock[] = {"414170","414171"};
+//        String binlock[] = {"414170","414171"};
         // paymentDetails.put(MOLPayActivity.mp_bin_lock, binlock);
 
         // Optional, for mp_bin_lock alert error.
@@ -71,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         // paymentDetails.put(MOLPayActivity.mp_custom_css_url, "file:///android_asset/custom.css");
 
         // Optional, set the token id to nominate a preferred token as the default selection, set "new" to allow new card only.
-        paymentDetails.put(MOLPayActivity.mp_preferred_token, "new");
+//        paymentDetails.put(MOLPayActivity.mp_preferred_token, "new");
 
         // Optional, credit card transaction type, set "AUTH" to authorize the transaction.
         // paymentDetails.put(MOLPayActivity.mp_tcctype, "");
@@ -80,14 +96,14 @@ public class MainActivity extends AppCompatActivity {
         // paymentDetails.put(MOLPayActivity.mp_is_recurring, false);
 
         // Optional, show nominated channels.
-        String allowedchannels[] = {"credit","credit3"};
+//        String allowedchannels[] = {"credit","credit3"};
         // paymentDetails.put(MOLPayActivity.mp_allowed_channels, allowedchannels);
 
         // Optional, simulate offline payment, set boolean value to enable.
         // paymentDetails.put(MOLPayActivity.mp_sandbox_mode, true);
 
         // Optional, required a valid mp_channel value, this will skip the payment info page and go direct to the payment screen.
-        paymentDetails.put(MOLPayActivity.mp_express_mode, false);
+//        paymentDetails.put(MOLPayActivity.mp_express_mode, false);
 
         // Optional, extended email format validation based on W3C standards.
         // paymentDetails.put(MOLPayActivity.mp_advanced_email_validation_enabled, true);
@@ -114,39 +130,43 @@ public class MainActivity extends AppCompatActivity {
         // paymentDetails.put(MOLPayActivity.mp_card_list_disabled, true);
 
         // Optional for channels restriction, this option has less priority than mp_allowed_channels.
-        String disabledChannels[] = {""};
+//        String disabledChannels[] = {""};
         // paymentDetails.put(MOLPayActivity.mp_disabled_channels, disabledChannels);
 
-        Intent intent = new Intent(MainActivity.this, MOLPayActivity.class);
-        intent.putExtra(MOLPayActivity.MOLPayPaymentDetails, paymentDetails);
-        startActivityForResult(intent, MOLPayActivity.MOLPayXDK);
+        orderId = paymentDetails.get(MOLPayActivity.mp_order_ID).toString();
+        billName = paymentDetails.get(MOLPayActivity.mp_bill_name).toString();
+        Country = paymentDetails.get(MOLPayActivity.mp_country).toString();
+        Currency = paymentDetails.get(MOLPayActivity.mp_currency).toString();
+        MobileNum = paymentDetails.get(MOLPayActivity.mp_bill_mobile).toString();
+        TtlAmount = paymentDetails.get(MOLPayActivity.mp_amount).toString();
 
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == MOLPayActivity.MOLPayXDK && resultCode == RESULT_OK){
-            Log.d(MOLPayActivity.MOLPAY, "MOLPay result = "+data.getStringExtra(MOLPayActivity.MOLPayTransactionResult));
-            TextView tw = (TextView)findViewById(R.id.resultTV);
-            tw.setText(data.getStringExtra(MOLPayActivity.MOLPayTransactionResult));
-        }
-
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView orderIdTextView = findViewById(R.id.order_id);
+        orderIdTextView.setText(orderId);
+
+        TextView billNameTextView = findViewById(R.id.bill_name);
+        billNameTextView.setText(billName);
+
+        TextView CountryTextView = findViewById(R.id.country);
+        CountryTextView.setText(Country);
+
+        TextView CurrencyTextView = findViewById(R.id.currency);
+        CurrencyTextView.setText(Currency);
+
+        TextView MobileNumTextView = findViewById(R.id.mobile);
+        MobileNumTextView.setText(MobileNum);
+
+        TextView TtlAmountTextView = findViewById(R.id.amount);
+        TtlAmountTextView.setText(TtlAmount);
+
+
         Button btnXdk = (Button) findViewById(R.id.xdk_button);
         btnXdk.setOnClickListener( new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                restartmolpay();
-
+                restartmolpay(paymentDetails);
             }
         });
 
