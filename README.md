@@ -1,28 +1,53 @@
-<!--
-# license: Copyright © 2011-2019 MOLPay Sdn Bhd. All Rights Reserved. 
--->
+
 # [Mobile XDK] – RazerMS Android Studio
 
 <img src="https://user-images.githubusercontent.com/38641542/74424311-a9d64000-4e8c-11ea-8d80-d811cfe66972.jpg">
 
-This is the complete and functional Razer Merchant Services Android payment module that is ready to be implemented into Android Studio through gradle from JCenter/Maven repository as a MOLPayXDK module. An example application project 
-(MOLPayXdkExample) is provided for MOLPayXDK framework integration reference.
+This is the finished and working Razer Merchant Services Android payment module, which can be added to Android Studio as a MOLPayXDK module by using the Gradle integration from the JCenter/Maven repository. For reference purposes, an example application project (MOLPayXdkExample) for the MOLPayXDK framework integration is given.
 
-这是一个完整和实用的 Razer Merchant Services 安卓支付模块，可以通过 JCenter/Maven 存储库中的 gradle 实现到 Android Studio 以作为一个 MOLPayXDK 框架。在此提供了一个示例应用程序项目（MOLPayXdkExample）以作为 MOLPayXDK 框架整合的参考。
+# How does it work ?
+
+![image](https://github.com/Naloff67/Mobile-XDK-RazerMS_Android_Studio/assets/89504625/43c14942-7c73-4e4b-b640-b4df668bfa29)
+
+
+1. User chooses the Payment option/Bank they wish to pay with
+2. Press "Proceed".
+3. input your bank credentials until finish payment.
+4. Complete the Transaction
+
+#### Note :
+
+you must be a registered Razer merchant to receive your own credentials for you to use or test this module.
+
+To do so you can contact us here : sales-sa@razer.com
+
+
+
+## Getting Started
+
+Follow the "get started" guide to install Android studio here : [https://docs.flutter.dev/get-started/install](https://developer.android.com/studio?gad_source=1&gclid=CjwKCAiAivGuBhBEEiwAWiFmYcRftsvawKYGV68bhK2IluVModqwUchdEU_wli2H39oLU1EdkBiGjxoC3RkQAvD_BwE&gclsrc=aw.ds)
+
+For help getting started with Android Studio, view our [online documentation](https://developer.android.com/studio/intro), which offers tutorials, samples, guidance on mobile development, and a full API reference
 
 ## Recommended configurations
 
-    - Minimum Android SDK Version: 27 ++
+Below is the installation guide to implement Razer XDK into your project.
+
+
+- Android SDK Version: 26 ++
     
-    - Minimum Android API level: 19 ++
+- Android API level: 19 ++
     
-    - Minimum Android target version: Android 4.4
+- Android target version: Android 4.4
     
-    - Minimum Android Studio Gradle: 3.1.2
+- Android Studio Gradle: 3.1.2
+    
 
 ## Installation Guidance
 
-[Installation](https://github.com/RazerMS/rms-mobile-xdk-android/wiki/Installation-Guidance)
+Below is the installation guide to implement Razer XDK into your project.
+
+[Click me to install now !](https://github.com/Naloff67/Mobile-XDK-RazerMS_Android_Studio/wiki/Installation-Guide)
 
 
 ## Resources
